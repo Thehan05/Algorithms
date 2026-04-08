@@ -1,7 +1,0 @@
-Counting sort performance :
-results clearly show the cache locality effect — sorted input is roughly 8x faster than random
-input, which is even more dramatic than the paper's 2-3x difference.
-That's likely because your machine has different cache sizes, and Java's JVM adds
-its own memory management overhead on top. The important thing is that the trend matches:
-sorted input is significantly faster, which confirms that cache misses in the count[] and output[]
-arrays are a real performance bottleneck for counting sort on random data.
