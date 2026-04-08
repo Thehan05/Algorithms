@@ -1,0 +1,87 @@
+import java.util.Random;
+
+public class CountingSortPerformance {
+    public static int[] generateRandomArray(int n, int min, int max) {
+        Random rand = new Random();
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = rand.nextInt(max - min + 1) + min;
+        }
+        return arr;
+    }
+
+    public static int[] generateSortedArray(int n) {
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = i;
+        }
+        return arr;
+    }
+
+    public static long benchmarkRandom(int n, int min, int max, int iterations) {
+        long total = 0;
+        // Warmup
+        for (int i = 0; i < 3; i++) {
+            int[] arr = generateRandomArray(n, min, max);
+            counting_sort.countingSort(arr, arr.length);
+        }
+
+        for(int i = 0; i < iterations; i++) {
+            int[] arr = generateRandomArray(n, min, max);
+
+            long start = System.nanoTime();
+            counting_sort.countingSort(arr, arr.length);
+            long end = System.nanoTime();
+
+            total += (end - start);
+        }
+
+        return total / iterations;
+    }
+
+    public static long benchmarkSorted(int n, int iterations) {
+        long total = 0;
+        // Warmup
+        for (int i = 0; i < 3; i++) {
+            int[] arr = generateSortedArray(n);
+            counting_sort.countingSort(arr, arr.length);
+        }
+
+        for(int i = 0; i < iterations; i++) {
+            int[] arr = generateSortedArray(n);
+
+            long start = System.nanoTime();
+            counting_sort.countingSort(arr, arr.length);
+            long end = System.nanoTime();
+
+            total += (end - start);
+        }
+
+        return total / iterations;
+    }
+
+    // Need to write main for testing benchmark of counting sort
+
+    public static void main (String[] args) {
+        System.out.println("\nCounting Sort Benchmark in ms Over Random(T1) and Sorted Inputs(T2)");
+        System.out.println("=====================================================================");
+        System.out.println("_____________________________________________________");
+        System.out.println("|            |            |            |            |");
+        System.out.println("|     n      |     r      |     T1     |     T2     |");
+        System.out.println("|____________|____________|____________|____________|");
+
+        int[] sizes = {1000000, 2000000, 3000000};
+        int iterations = 10;
+
+        for(int n :sizes) {
+            long t1 = benchmarkRandom(n, 0, n-1, iterations);
+            long t2 = benchmarkSorted(n, iterations);
+            System.out.printf("|  %7d   |  %7d   |   %6.2f   |   %6.2f   |%n", n, n, t1 / 1_000_000.0, t2 / 1_000_000.0);
+        }
+        System.out.println("|____________|____________|____________|____________|");
+    }
+
+
+}
+
+
