@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class ClassicQuickSortPerformance {
 /* ------------------------ TEMPORARY PERFORMANCE TESTER --------------------- */
-    public static int[] generateRandomArray(int n, int min, int max) {
+    public static int[] generateRandomArray(int n, int min, int max) { // DELETE THIS LATER COUNING SORT PERFROMANCE DOES ALREADY
         Random rand = new Random();
         int[] arr = new int[n];
         for (int i = 0; i < n; i++) {
