@@ -14,7 +14,7 @@ public class CountingSortPerformance {
         return arr;
     }
 
-    // create an already sorted array form 0 to n - 1
+    // create an already sorted array from 0 to n - 1
     public static int[] generateSortedArray(int n) {
         int[] arr = new int[n];
 
