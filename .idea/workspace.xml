@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="00161bf6-beec-4ff8-86c2-7b5242b3c934" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/ClassicQuickSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/ClassicQuickSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main/ClassicQuickSortPerformance.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/ClassicQuickSortPerformance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/CountingSortPerformance.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/CountingSortPerformance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/counting_sort.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/counting_sort.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +159,7 @@
       <workItem from="1775642725734" duration="303000" />
       <workItem from="1775644894561" duration="208000" />
       <workItem from="1775645107233" duration="1675000" />
-      <workItem from="1775731117112" duration="4601000" />
+      <workItem from="1775731117112" duration="7664000" />
     </task>
     <servers />
   </component>
