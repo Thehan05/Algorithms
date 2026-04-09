@@ -26,14 +26,14 @@ public class ClassicQuickSort {
             }
         }
 
-        private static int partition(int[] arr, int low, int high) {
+        public static int partition(int[] arr, int low, int high) {
 
             // get the pivot from median function
             int pivot = medianOfThree(arr, low, high);
             int i = low - 1;
 
             /*
-            loop thru subarray, if the value is smaller or equal to pivot we move it to the left of pivot
+            loop through subarray, if the value is smaller or equal to pivot, we move it to the left of pivot
             the i is used here to place the elements that are smaller than pivot in the correct place.
             makes sure that even if we skip over a value that is bigger than pivot we are putting the smaller ones on
             the left of it
@@ -54,7 +54,7 @@ public class ClassicQuickSort {
         }
 
         // helper method to move elements around
-        private static void swap(int[] arr, int i, int j) {
+        public static void swap(int[] arr, int i, int j) {
             /*
             use a temporary variable to store the element i.
             Using the array, we put the element j at element i place.
@@ -67,7 +67,7 @@ public class ClassicQuickSort {
         }
 
         // pivot chooser
-        private static int medianOfThree(int[] arr, int low, int high) {
+        public static int medianOfThree(int[] arr, int low, int high) {
             // find the middle index of the array
             int mid = low + (high - low) / 2;
 
