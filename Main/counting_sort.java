@@ -1,14 +1,14 @@
 public class counting_sort {
 
-    public static int[] countingSort(int[] arr, int n) {
+    public static void countingSort(int[] arr, int n) {
 
-        // hold the sorted result, get the largest value in array,
-        // create a count array storing the number of appearance of each number
+        // hold the sorted result, get the largest value in an array,
+        // create a count array storing the number of appearances of each number
         int[] output = new int[n];
         int r = getMax(arr, n);
         int[] count = new int[r + 1];
 
-        // set all counts to 0 in array
+        // set all counts to 0 in an array
         for(int i = 0; i <= r; i++){
             count[i] = 0;
         }
@@ -18,7 +18,7 @@ public class counting_sort {
             count[arr[i]]++;
         }
 
-        // instead of just checking frequencies we are cumulatively adding them, checking how many are equal or less than that value
+        // instead of just checking frequencies, we are cumulatively adding them, checking how many are equal or less than that value
         // gives you information on the ending position of each value
         for(int i = 1; i <= r; i++){
             count[i] += count[i - 1];
@@ -38,7 +38,6 @@ public class counting_sort {
             arr[i] = output[i];
         }
 
-        return arr;
     }
 
     public static int getMax(int[] arr, int n){
@@ -46,7 +45,7 @@ public class counting_sort {
         // assume the first element is the biggest
         int max = arr[0];
 
-        // go through array and if a value is bigger we set it to max
+        // go through an array, and if a value is bigger, we set it to max
         for(int i = 0; i < n; i++){
             if(arr[i] > max){
                 max = arr[i];

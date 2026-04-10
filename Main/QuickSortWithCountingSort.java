@@ -26,9 +26,7 @@ public class QuickSortWithCountingSort {
     private static void modifiedQuickSort(int[] arr, int low, int high, int maxValue, int minValue) {
         if(low >= high || (maxValue - minValue + high - low) <= C){
             if(low < high){
-                int[] partition = Arrays.copyOfRange(arr, low, high + 1);
-                counting_sort.countingSort(partition, partition.length);
-                System.arraycopy(partition, 0, arr, low, partition.length);
+                countingSortPartition(arr, low, high);
             }
             return;
         }
@@ -39,21 +37,37 @@ public class QuickSortWithCountingSort {
         modifiedQuickSort(arr, pivot + 1, high, maxValue, midValue);
     }
 
-    public static void main(String[] args) {
-        int[] data = {29, 10, 14, 37, 13, 5, 8, 21, 45, 2, 99, 67, 33, 11, 7};
+    private static void countingSortPartition(int[] arr, int low, int high) {
+        int n = high - low + 1;
 
-        System.out.println("Before sorting:");
-        for (int num : data) {
-            System.out.print(num + " ");
+        int localMin = arr[low];
+        int localMax = arr[low];
+        for(int i = low + 1; i <= high; i++){
+            if(arr[i] < localMin){
+                localMin = arr[i];
+            }
+            if(arr[i] > localMax){
+                localMax = arr[i];
+            }
         }
-        System.out.println();
 
-        quickSort_countingSort(data);
+        int range = localMax - localMin + 1;
+        int[] count = new int[range];
+        int[] output = new int[n];
 
-        System.out.println("After sorting:");
-        for (int num : data) {
-            System.out.print(num + " ");
+        for(int i = low; i <= high; i++){
+            count[arr[i] - localMin]++;
         }
-        System.out.println();
+
+        for(int i = 1; i < range; i++){
+            count[i] += count[i - 1];
+        }
+
+        for(int i = high; i >= low; i--){
+            count[arr[i] - localMin]--;
+            output[count[arr[i] - localMin]] = arr[i];
+        }
+
+        System.arraycopy(output, 0, arr, low, n);
     }
 }
