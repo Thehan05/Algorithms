@@ -15,6 +15,29 @@ public class QuickSortPerformance {
         return arr;
     }
 
+    public static long benchmarkQuickWithInsertion(int n, int min, int max, int iterations) {
+        long total = 0;
+
+        // Warmup
+        for (int i = 0; i < 3; i++) {
+            int[] arr = generateRandomArray(n, min, max);
+            QuickSortAndInsertionSort.sort(arr);
+        }
+
+        // Timed runs
+        for (int i = 0; i < iterations; i++) {
+            int[] arr = generateRandomArray(n, min, max);
+
+            long start = System.nanoTime();
+            QuickSortAndInsertionSort.sort(arr);
+            long end = System.nanoTime();
+
+            total += (end - start);
+        }
+
+        return total / iterations;
+    }
+
     // Benchmark quick sort on random arrays and return the average running time
     public static long benchmarkClassic(int n, int min, int max, int iterations) {
         long total = 0;
@@ -77,8 +100,9 @@ public class QuickSortPerformance {
         // Run the benchmark for each size and print the average time in milliseconds
         for (int n : sizes) {
             long t1 = benchmarkClassic(n, 0, n - 1, iterations);
-            long t2 = benchmarkQuickWithCounting(n, 0, n - 1, iterations);
-            System.out.printf("|  %7d   |   %6.2f   |            |   %6.2f   |%n", n, t1 / 1_000_000.0, t2 / 1_000_000.0);
+            long t2 = benchmarkQuickWithInsertion(n, 0, n - 1, iterations);
+            long t3 = benchmarkQuickWithCounting(n, 0, n - 1, iterations);
+            System.out.printf("|  %7d   |   %6.2f   |   %6.2f   |   %6.2f   |%n", n, t1 / 1_000_000.0, t2 / 1_000_000.0, t3 / 1_000_000.0);
         }
 
 
