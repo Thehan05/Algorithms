@@ -1,10 +1,8 @@
-import java.util.Arrays;
-
-public class QuickSortWithCountingSort {
+public class HybridSort {
 
     private static final int C = 1000;
 
-    public static void quickSort_countingSort(int[] arr){
+    public static void hybridSort(int[] arr){
         if(arr == null || arr.length <= 1){
             return;
         }
@@ -31,7 +29,7 @@ public class QuickSortWithCountingSort {
             return;
         }
 
-        int pivot = ClassicQuickSort.partition(arr, low, high);
+        int pivot = QuickSort.partition(arr, low, high);
         int midValue = arr[pivot];
         modifiedQuickSort(arr, low, pivot - 1, midValue, minValue );
         modifiedQuickSort(arr, pivot + 1, high, maxValue, midValue);
@@ -70,4 +68,5 @@ public class QuickSortWithCountingSort {
 
         System.arraycopy(output, 0, arr, low, n);
     }
+
 }
