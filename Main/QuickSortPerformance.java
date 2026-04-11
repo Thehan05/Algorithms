@@ -88,7 +88,7 @@ public class QuickSortPerformance {
     }
 
     public static void main(String[] args) {
-        int[] sizes = {1000000, 2000000};
+        int[] sizes = {1000000, 2000000, 3000000};
         int iterations = 10;
         System.out.println("\n Running Times in ms for Quicksort (T1), Quicksort with Insertion Sort (T2), and Quicksort with Counting Sort (T3)");
         System.out.println("=====================================================================================================================");
@@ -105,10 +105,6 @@ public class QuickSortPerformance {
             System.out.printf("|  %7d   |   %6.2f   |   %6.2f   |   %6.2f   |%n", n, t1 / 1_000_000.0, t2 / 1_000_000.0, t3 / 1_000_000.0);
         }
 
-
-//        for (int n : sizes) {
-//            long t3 = benchmarkQuickWithInsertion(n, 0, n - 1, iterations);
-//        }
 
         System.out.println("|____________|____________|____________|____________|");
     }

@@ -28,17 +28,17 @@ public class QuickSortAndInsertionSort {
 
     private static int partition(int[] arr, int low, int high) {
 
-        int pivot = medianOfThree(arr, low, high);
+        int pivot = ClassicQuickSort.medianOfThree(arr, low, high);
         int i = low - 1;
 
         for (int j = low; j < high; j++) {
             if (arr[j] <= pivot) {
                 i++;
-                swap(arr, i, j);
+                ClassicQuickSort.swap(arr, i, j);
             }
         }
 
-        swap(arr, i + 1, high);
+        ClassicQuickSort.swap(arr, i + 1, high);
         return i + 1;
     }
 
@@ -56,40 +56,4 @@ public class QuickSortAndInsertionSort {
         }
     }
 
-    private static void swap(int[] arr, int i, int j) {
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-    }
-
-    private static int medianOfThree(int[] arr, int low, int high) {
-        int mid = low + (high - low) / 2;
-
-        if(arr[low] > arr[mid]) {swap(arr, low, mid);}
-        if(arr[low] > arr[high]) {swap(arr, low, high);}
-        if(arr[mid] > arr[high]) {swap(arr, mid, high);}
-
-        swap(arr, mid, high);
-        return arr[high];
-    }
-
-
-    public static void main(String[] args) {
-        int[] data = {29, 10, 14, 37, 13, 5, 8, 21};
-
-        System.out.println("Before sorting:");
-        printArray(data);
-
-        sort(data);
-
-        System.out.println("After sorting:");
-        printArray(data);
-    }
-
-    private static void printArray(int[] arr) {
-        for (int num : arr) {
-            System.out.print(num + " ");
-        }
-        System.out.println();
-    }
 }

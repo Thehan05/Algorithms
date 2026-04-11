@@ -80,24 +80,4 @@ public class ClassicQuickSort {
             swap(arr, mid, high);
             return arr[high];
         }
-
-
-        public static void main(String[] args) {
-            int[] data = {29, 10, 14, 37, 13, 5, 8, 21};
-
-            System.out.println("Before sorting:");
-            printArray(data);
-
-            quickSort(data);
-
-            System.out.println("After sorting:");
-            printArray(data);
-        }
-
-        private static void printArray(int[] arr) {
-            for (int num : arr) {
-                System.out.print(num + " ");
-            }
-            System.out.println();
-        }
 }
