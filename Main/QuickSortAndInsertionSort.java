@@ -1,4 +1,4 @@
-public class QuickInsertionSort {
+public class QuickSortAndInsertionSort {
     private static final int THRESHOLD = 16;
 
     public static void sort(int[] arr) {
@@ -18,7 +18,7 @@ public class QuickInsertionSort {
             return;
         }
 
-        int pivotIndex = QuickSort.partition(arr, low, high);
+        int pivotIndex = ClassicQuickSort.partition(arr, low, high);
         quickInsertionSort(arr, low, pivotIndex - 1);
         quickInsertionSort(arr, pivotIndex + 1, high);
     }
