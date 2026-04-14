@@ -1,4 +1,4 @@
-public class counting_sort {
+public class CountingSort {
 
     public static void countingSort(int[] arr, int n) {
 
@@ -7,11 +7,6 @@ public class counting_sort {
         int[] output = new int[n];
         int r = getMax(arr, n);
         int[] count = new int[r + 1];
-
-        // set all counts to 0 in an array
-        for(int i = 0; i <= r; i++){
-            count[i] = 0;
-        }
 
         // goes through the array and gathers the number of times each number appears
         for(int i = 0; i < n; i++){
