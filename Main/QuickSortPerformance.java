@@ -1,8 +1,6 @@
 import java.util.Random;
 
 public class QuickSortPerformance {
-/* ------------------------ TEMPORARY PERFORMANCE TESTER --------------------- */
-    // DELETE THIS LATER COUNTING SORT PERFORMANCE DOES ALREADY
     // test an array of size n filled with integer from max to min
     public static int[] generateRandomArray(int n, int min, int max) {
         Random rand = new Random();
@@ -104,11 +102,6 @@ public class QuickSortPerformance {
             long t3 = benchmarkQuickWithCounting(n, 0, n - 1, iterations);
             System.out.printf("|  %7d   |   %6.2f   |   %6.2f   |   %6.2f   |%n", n, t1 / 1_000_000.0, t2 / 1_000_000.0, t3 / 1_000_000.0);
         }
-
-
-//        for (int n : sizes) {
-//            long t3 = benchmarkQuickWithInsertion(n, 0, n - 1, iterations);
-//        }
 
         System.out.println("|____________|____________|____________|____________|");
     }
