@@ -1,8 +1,8 @@
-public class HybridSort {
+public class QuickSortWithCountingSort {
 
     private static final int C = 1000;
 
-    public static void hybridSort(int[] arr){
+    public static void quickSort_countingSort(int[] arr){
         if(arr == null || arr.length <= 1){
             return;
         }
@@ -29,7 +29,7 @@ public class HybridSort {
             return;
         }
 
-        int pivot = QuickSort.partition(arr, low, high);
+        int pivot = ClassicQuickSort.partition(arr, low, high);
         int midValue = arr[pivot];
         modifiedQuickSort(arr, low, pivot - 1, midValue, minValue );
         modifiedQuickSort(arr, pivot + 1, high, maxValue, midValue);

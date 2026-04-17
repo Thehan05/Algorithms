@@ -1,4 +1,4 @@
-public class QuickSort {
+public class ClassicQuickSort {
     public static void quickSort(int[] arr) {
 
         // no need to do anything if an array is empty or only has 1 element

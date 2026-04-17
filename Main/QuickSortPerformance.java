@@ -8,7 +8,7 @@ public class QuickSortPerformance {
         // Warmup
         for (int i = 0; i < 3; i++) {
             int[] arr = ArrayUtils.generateRandom(n, min, max);
-            QuickInsertionSort.sort(arr);
+            QuickSortAndInsertionSort.sort(arr);
         }
 
         // Timed runs
@@ -16,7 +16,7 @@ public class QuickSortPerformance {
             int[] arr = ArrayUtils.generateRandom(n, min, max);
 
             long start = System.nanoTime();
-            QuickInsertionSort.sort(arr);
+            QuickSortAndInsertionSort.sort(arr);
             long end = System.nanoTime();
 
             total += (end - start);
@@ -31,7 +31,7 @@ public class QuickSortPerformance {
         // Warmup
         for (int i = 0; i < 3; i++) {
             int[] arr = ArrayUtils.generateSorted(n);
-            QuickSort.quickSort(arr);
+            ClassicQuickSort.quickSort(arr);
         }
 
         //
@@ -40,7 +40,7 @@ public class QuickSortPerformance {
 
             // Record the time before and after sorting
             long start = System.nanoTime();
-            QuickSort.quickSort(arr);
+            ClassicQuickSort.quickSort(arr);
             long end = System.nanoTime();
 
             total += (end - start);
@@ -55,7 +55,7 @@ public class QuickSortPerformance {
         // Warmup
         for (int i = 0; i < 3; i++) {
             int[] arr = ArrayUtils.generateRandom(n, min, max);
-            HybridSort.hybridSort(arr);
+            QuickSortWithCountingSort.quickSort_countingSort(arr);
         }
 
         //
@@ -64,7 +64,7 @@ public class QuickSortPerformance {
 
             // Record the time before and after sorting
             long start = System.nanoTime();
-            HybridSort.hybridSort(arr);
+            QuickSortWithCountingSort.quickSort_countingSort(arr);
             long end = System.nanoTime();
 
             total += (end - start);
