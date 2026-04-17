@@ -60,7 +60,7 @@ public class CountingSortPerformance {
         System.out.println("|     n      |     r      |     T1     |     T2     |");
         System.out.println("|____________|____________|____________|____________|");
 
-        int[] sizes = {1000000, 2000000, 3000000};
+        int[] sizes = {1000000, 2000000, 3000000, 4000000, 5000000};
         int iterations = 10;
 
         // Benchmark counting sort for each input size
@@ -83,7 +83,7 @@ public class CountingSortPerformance {
         System.out.println("|     n      |     r      |     T1     |     T2     |");
         System.out.println("|____________|____________|____________|____________|");
 
-        int[] sizes = {1000, 2000, 3000};
+        int[] sizes = {500, 1000, 2000, 3000, 5000, 10000, 25000, 50000};
         int r = 1000000;
         int iterations = 10;
 

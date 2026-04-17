@@ -75,7 +75,7 @@ public class QuickSortPerformance {
     }
 
     public static void main(String[] args) {
-        int[] sizes = {1000000, 2000000, 3000000};
+        int[] sizes = {1000000, 2000000, 3000000, 4000000};
         int iterations = 10;
         System.out.println("\n Running Times in ms for Quicksort (T1), Quicksort with Insertion Sort (T2), and Quicksort with Counting Sort (T3)");
         System.out.println("==================================================================================================================");
